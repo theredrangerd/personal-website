@@ -1,0 +1,70 @@
+{
+  "name": "Noah Austin",
+  "tagline": "Debater, aspiring rationalist, and seeker of first principles.",
+  "about": "I'm a 10th Grader at UWC determined to understand the world around me. Be it the phenomenon I see around me or the arguments of my friends, I strive to go deeper and push myself to understand.",
+  "interests": [
+    "Debating",
+    "Philosophy",
+    "Economics",
+    "Politics",
+    "History",
+    "Science",
+    "Technology",
+    "Travel & Culture",
+    "Reading",
+    "Volunteering with ISF",
+    "Rationality & Decision Theory",
+    "Squash & Badminton"
+  ],
+  "activities": [
+    {
+      "title": "Forum Leader",
+      "period": "2025 – Present",
+      "description": "Forum is a student-led platform for discourse where the next generation of thinkers analyze and debate the complex geopolitical and economic forces shaping our world."
+    },
+    {
+      "title": "Debate Team",
+      "period": "2023 – Present",
+      "description": "Engaged in competitive debate in WSDC, AP, and BP formats internationally."
+    },
+    {
+      "title": "Volunteer with Indochina Starfish Foundation",
+      "period": "2022 – Present",
+      "description": "Volunteer with Indochina Starfish Foundation, a non-profit organization that provides education and support to children in need."
+    },
+    {
+      "title": "Model Philosophy Ethics Olympiad",
+      "period": "2025-Present",
+      "description": "Two time podium finisher at international Ethics Olympiad, a dialectal competition dedicated to truth seeking and philosophical discourse."
+    },
+    {
+      "title": "Theatre",
+      "period": "2023-Present",
+      "description": " Actively involved in theatre, both on and off stage, having played leading roles in multiple productions."
+    }
+  ],
+  "achievements": [
+    {
+      "title": "2025 English Language & Literature Academic Award",
+      "detail": "Top 2 Students of >300. Awarded for excellence in English Language & Literature and exemplary modelling of the values of a UWC student."
+    },
+    {
+      "title": "Academic Commendations",
+      "detail": "Recognised for outstanding performance in Economics, Additional Science, Drama & Design, and Physical Education."
+    },
+    {
+      "title": "Singapore Silver National Youth Achievement Award",
+      "detail": "Recognised for sustained committment to service and leadership. Awarded following a year of service and contribution to the community.."
+    },
+    {
+      "title": "Honors in Global Economics @ Phillips Exeter Academy",
+      "detail": "Recognised as 'undisputed leader' and commended for excellence at the Harkness table by Dr. Eric Bowman."
+    }
+  ],
+  "links": {
+    "email": "austi118767@gapps.uwcsea.edu.sg",
+    "linkedin": "https://www.linkedin.com/in/noah-austin-541a66397/",
+    "github": "https://github.com/theredrangerd",
+    "cvPdf": "/cv.pdf"
+  }
+}

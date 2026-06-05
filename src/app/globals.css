@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-accent-rgb: 239 68 68;
+    --color-accent-muted-rgb: 153 27 27;
+    --color-accent-glow-rgb: 248 113 113;
+    --shadow-glow: 0 0 40px rgba(239, 68, 68, 0.35);
+    --shadow-glow-sm: 0 0 20px rgba(239, 68, 68, 0.25);
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-background text-zinc-100 antialiased;
+  }
+
+  ::selection {
+    background-color: rgba(239, 68, 68, 0.4);
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  .mesh-gradient {
+    background: radial-gradient(
+        ellipse 80% 60% at 20% 20%,
+        rgba(239, 68, 68, 0.35),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 70% 50% at 80% 30%,
+        rgba(153, 27, 27, 0.25),
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 50% 80%,
+        rgba(248, 113, 113, 0.15),
+        transparent 50%
+      );
+  }
+
+  .glass {
+    @apply border border-white/10 bg-white/5 backdrop-blur-md;
+  }
+
+  /* Solid fallback color, then gradient when supported */
+  .text-gradient {
+    @apply text-accent-glow;
+  }
+
+  @supports (background-clip: text) {
+    .text-gradient {
+      @apply bg-gradient-to-r from-white via-accent-glow to-accent bg-clip-text text-transparent;
+    }
+  }
+}
+
+/* Do not force transition-duration on * — it breaks Framer Motion opacity animations */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-float {
+    animation: none !important;
+  }
+}
