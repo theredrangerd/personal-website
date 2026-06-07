@@ -1,7 +1,7 @@
 {
   "name": "Noah Austin",
   "tagline": "Debater, aspiring rationalist, and seeker of first principles.",
-  "about": "I'm a 10th Grader at UWC determined to understand the world around me. Be it the phenomenon I see around me or the arguments of my friends, I strive to go deeper and push myself to understand.",
+  "about": "I'm a 10th Grader at UWC determined to understand the world around me. Be it the phenomenon I see or the arguments of my friends, I strive to go deeper and push myself to understand.",
   "interests": [
     "Debating",
     "Philosophy",
@@ -41,6 +41,11 @@
       "title": "Theatre",
       "period": "2023-Present",
       "description": " Actively involved in theatre, both on and off stage, having played leading roles in multiple productions."
+    },
+    {
+      "title": "Economics & Business Intern",
+      "period": "2025-Present",
+      "description": " Interned for UWC Economics Department participating in curriculum redesign for G9&10, further contributed to creation of workbooks for IBDP Economics. Additionally led revision clinics for students"
     }
   ],
   "achievements": [
@@ -63,7 +68,7 @@
   ],
   "links": {
     "email": "austi118767@gapps.uwcsea.edu.sg",
-    "linkedin": "https://www.linkedin.com/in/noah-austin-541a66397/",
+    "linkedin": "www.linkedin.com/in/noahqaustin/",
     "github": "https://github.com/theredrangerd",
     "cvPdf": "/cv.pdf"
   }
