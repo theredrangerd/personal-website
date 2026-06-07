@@ -8,6 +8,11 @@ import { Section } from "@/components/ui/Section";
 export function Contact() {
   const { links } = siteContent;
 
+  const isProd = process.env.NODE_ENV === "production";
+  const cvPath = links.cvPdf
+    ? (isProd ? `/personal-website${links.cvPdf}` : links.cvPdf)
+    : undefined;
+
   return (
     <Section id="contact" title="Let's Connect" subtitle="Contact">
       <motion.div
@@ -54,9 +59,9 @@ export function Contact() {
             </a>
           )}
 
-          {links.cvPdf && (
+          {cvPath && (
             <a
-              href={links.cvPdf}
+              href={cvPath}
               target="_blank"
               rel="noopener noreferrer"
               className="glass rounded-full px-6 py-3 text-sm font-medium text-zinc-200 transition-all hover:border-accent/40 hover:text-white"
