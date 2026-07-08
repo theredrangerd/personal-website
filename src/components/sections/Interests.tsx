@@ -7,32 +7,31 @@ import { Section } from "@/components/ui/Section";
 
 export function Interests() {
   return (
-    <Section id="interests" title="What Drives Me" subtitle="Interests">
-      <motion.div
+    <Section
+      id="interests"
+      mark="—"
+      subtitle="Open threads"
+      title="Things I keep returning to."
+      aside="A set, not a ranking — curiosity rarely files itself in order."
+    >
+      <motion.ul
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={viewportOnce}
-        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        className="columns-1 gap-x-12 sm:columns-2"
       >
         {siteContent.interests.map((interest, index) => (
-          <motion.div
+          <motion.li
             key={`${index}-${interest}`}
             variants={staggerItem}
-            whileHover={{ scale: 1.04, y: -4 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="group glass relative flex min-h-[7.5rem] flex-col overflow-hidden rounded-2xl p-6 transition-shadow hover:border-accent/40 hover:shadow-glow-sm"
+            className="rule-hair flex items-baseline gap-3 break-inside-avoid py-3"
           >
-            <span className="font-display text-xs text-accent-glow/60">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <p className="mt-3 break-words font-medium leading-snug text-white transition-colors group-hover:text-accent-glow">
-              {interest}
-            </p>
-            <div className="absolute -bottom-8 -right-8 h-24 w-24 rounded-full bg-accent/10 blur-2xl transition-opacity group-hover:opacity-100 opacity-0" />
-          </motion.div>
+            <span aria-hidden className="mt-2 h-px w-3 shrink-0 bg-flow" />
+            <span className="font-sans text-lg text-ink">{interest}</span>
+          </motion.li>
         ))}
-      </motion.div>
+      </motion.ul>
     </Section>
   );
 }

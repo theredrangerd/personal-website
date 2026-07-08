@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-08T13:40:00.000Z",
+  "title": "Design System: Noah Austin — Personal Site",
+  "extensions": {
+    "colorMeta": {
+      "cobalt-flow": { "role": "primary", "displayName": "Cobalt Flow", "canonical": "#1e3ad6", "tonalRamp": ["#0a1240", "#0f1c66", "#15288f", "#1a32b3", "#1e3ad6", "#4a63e2", "#8496ee", "#c4ccf8"] },
+      "clash-red": { "role": "secondary", "displayName": "Clash Red", "canonical": "#c8362a", "tonalRamp": ["#2f0c08", "#521510", "#761d16", "#9a271d", "#c8362a", "#d96257", "#e79891", "#f4d3cf"] },
+      "sheet": { "role": "neutral", "displayName": "Sheet", "canonical": "#f2f3ef", "tonalRamp": ["#26282400", "#3d403b", "#585c55", "#787d73", "#9ba193", "#c2c6bc", "#dee1d9", "#f2f3ef"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#16181d", "tonalRamp": ["#16181d", "#22252d", "#333743", "#464b5b", "#606678", "#868da0", "#b3b9c6", "#dee1e8"] },
+      "graphite": { "role": "neutral", "displayName": "Graphite", "canonical": "#565f6b", "tonalRamp": ["#191c20", "#292d33", "#3b4048", "#4a5059", "#565f6b", "#7d8592", "#a8aeb8", "#d4d7dd"] },
+      "rule": { "role": "neutral", "displayName": "Rule", "canonical": "#d7dad1", "tonalRamp": ["#2b2d28", "#42453d", "#5d6054", "#7b7e70", "#9da08f", "#bec1b3", "#d7dad1", "#eef0ea"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (Masthead)", "purpose": "Schibsted Grotesk 900. The hero name, once, followed by the drawing cobalt arrow." },
+      "headline": { "displayName": "Headline", "purpose": "Schibsted Grotesk 700. Section titles." },
+      "title": { "displayName": "Title", "purpose": "Schibsted Grotesk 700. Activity / distinction entry titles." },
+      "body": { "displayName": "Body", "purpose": "Schibsted Grotesk 400. Reading copy, 65–75ch." },
+      "lede": { "displayName": "Lede", "purpose": "Schibsted Grotesk 400. The hero tagline." },
+      "notation": { "displayName": "Notation", "purpose": "Spline Sans Mono uppercase — the debater's shorthand hand: margin labels, marks, years, nav, links." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out-flow", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Standard ease for reveals, line draws, and state transitions." },
+      { "name": "draw-line", "value": "scaleX 0→1 (origin left) over 0.6s", "purpose": "The masthead argument-arrow drawing outward." },
+      { "name": "draw-line-y", "value": "scaleY 0→1 (origin top) over 0.7s", "purpose": "The cobalt flow line drawing down each section's left edge on scroll." },
+      { "name": "slide-in-left", "value": "opacity 0.001→1 + translateX -14px→0 over 0.5s", "purpose": "Timeline entries sliding in from the flow line." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Flow Link",
+      "kind": "button",
+      "refersTo": "flow-link",
+      "description": "The primary action affordance — a mono text link that sweeps a cobalt underline on hover/focus. No filled buttons exist.",
+      "html": "<a href=\"#\" class=\"ds-flow-link\">Read on ↓</a>",
+      "css": ".ds-flow-link { font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: #16181d; text-decoration: underline; text-decoration-color: transparent; text-decoration-thickness: 1.5px; text-underline-offset: 5px; transition: color 0.2s ease, text-decoration-color 0.2s ease; } .ds-flow-link:hover, .ds-flow-link:focus-visible { color: #1e3ad6; text-decoration-color: #1e3ad6; outline: none; }"
+    },
+    {
+      "name": "Masthead",
+      "kind": "custom",
+      "refersTo": "masthead",
+      "description": "The hero name in the heaviest grotesk weight, once per page, followed by the drawing cobalt argument-arrow.",
+      "html": "<div><h1 class=\"ds-masthead\">Noah Austin</h1><div class=\"ds-arrow\" aria-hidden=\"true\"><span class=\"ds-arrow-line\"></span><span class=\"ds-arrow-head\">→</span></div></div>",
+      "css": ".ds-masthead { font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; font-weight: 900; font-size: clamp(3.75rem, 8vw, 6rem); line-height: 0.92; letter-spacing: -0.025em; color: #16181d; margin: 0; } .ds-arrow { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.5rem; } .ds-arrow-line { display: block; height: 1px; width: 8rem; background: #1e3ad6; } .ds-arrow-head { font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 1.125rem; color: #1e3ad6; }"
+    },
+    {
+      "name": "Flow Label",
+      "kind": "custom",
+      "refersTo": "flow-label",
+      "description": "The signature notation margin — a cobalt mark whose glyph encodes the section's role (∴ claim, — set, → tested, ✓ extended) plus a mono label.",
+      "html": "<p class=\"ds-flow-label\"><span class=\"ds-mark\">∴</span> <span>The claim</span></p>",
+      "css": ".ds-flow-label { font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: #565f6b; margin: 0; display: flex; align-items: baseline; gap: 0.5rem; } .ds-mark { font-size: 1rem; color: #1e3ad6; }"
+    },
+    {
+      "name": "Section Title",
+      "kind": "custom",
+      "refersTo": "section-title",
+      "description": "Section headline in heavy grotesk at the top of the argument column.",
+      "html": "<h2 class=\"ds-section-title\">Where the thinking gets tested.</h2>",
+      "css": ".ds-section-title { font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: clamp(1.875rem, 4vw, 2.25rem); line-height: 1.05; letter-spacing: -0.02em; color: #16181d; margin: 0; text-wrap: balance; }"
+    },
+    {
+      "name": "Nav Item",
+      "kind": "nav",
+      "refersTo": "flow-label",
+      "description": "Top-nav item — mono uppercase; active state prefixed with a cobalt →, no pill or fill.",
+      "html": "<nav class=\"ds-nav\"><button class=\"ds-nav-item ds-nav-active\"><span class=\"ds-nav-tick\">→ </span>Activities</button><button class=\"ds-nav-item\">Distinctions</button></nav>",
+      "css": ".ds-nav { display: flex; gap: 1.75rem; } .ds-nav-item { font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: #565f6b; background: none; border: none; cursor: pointer; transition: color 0.2s ease; } .ds-nav-item:hover { color: #16181d; } .ds-nav-active { color: #16181d; } .ds-nav-tick { color: #1e3ad6; }"
+    },
+    {
+      "name": "Timeline Entry",
+      "kind": "card",
+      "refersTo": "section-title",
+      "description": "A ledger entry on the Activities timeline — cobalt mono year, heavy grotesk title, graphite description, separated by a hairline rule (never a card).",
+      "html": "<article class=\"ds-entry\"><p class=\"ds-entry-year\">2025 – Present</p><h3 class=\"ds-entry-title\">Forum Leader</h3><p class=\"ds-entry-desc\">A student-led platform for discourse where the next generation of thinkers debate the forces shaping our world.</p></article>",
+      "css": ".ds-entry { border-top: 1px solid #d7dad1; padding: 2rem 0; max-width: 65ch; } .ds-entry-year { font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: #1e3ad6; margin: 0 0 0.5rem; } .ds-entry-title { font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.02em; color: #16181d; margin: 0; } .ds-entry-desc { font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size: 1.125rem; line-height: 1.6; color: #565f6b; margin: 0.75rem 0 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Flow",
+    "overview": "A competitive debater keeps a 'flow' — the shorthand sheet that tracks an argument's life across a round: a claim is made, a response answers it, a rebuttal extends or drops it, connectors show where ideas clash. This site is built as one long flow. A cobalt line draws down the left edge of each section as you scroll — the argument advancing. The left margin carries debate notation that means something (∴ the claim, — an open thread, → where it's tested, ✓ extended), not decorative numbering. Type is one confident grotesk in heavy weight/size contrast plus a humanist mono used exactly as a debater's shorthand. Color commits: near-black ink on a cool sheet, cobalt as the argument line, clash-red held in reserve. It is a deliberate move off the editorial-typographic lane the previous version had drifted into — no Fraunces, no Newsreader, no reflex-serif restraint.",
+    "keyCharacteristics": [
+      "A two-column flow: notation margin + argument column, with a cobalt flow line drawing down each section.",
+      "Notation carries meaning (∴ — → ✓); numbering only where order is real (the Activities timeline).",
+      "One committed accent — cobalt — used generously as the 'argument line'; clash-red is rare.",
+      "One heavy grotesk (Schibsted Grotesk) in weight/size contrast + one humanist mono (Spline Sans Mono) as debate shorthand.",
+      "Hairline rules instead of cards. No box-shadows, no gradients, near-zero radius."
+    ],
+    "rules": [
+      { "name": "The Argument-Line Rule", "body": "Cobalt is the flow of the argument, so it may run generously (lines, marks, years, links) — but only ever as ink, never as a filled button or background panel. It marks the reasoning; it doesn't upholster the page.", "section": "colors" },
+      { "name": "The Two-Pen Rule", "body": "Clash-red is the second pen and stays rare. It appears only where something is genuinely being contested or dropped. Reaching for it as a general accent is prohibited — that is what cobalt is for.", "section": "colors" },
+      { "name": "The One-Family Rule", "body": "Contrast is built from Schibsted Grotesk's own weight range (400 → 900), not a second proportional typeface. A serif never enters this system.", "section": "typography" },
+      { "name": "The Shorthand Rule", "body": "Mono means notation. If text is set in Spline Sans Mono it must be a label, a year, a mark, a nav item, or a link — never running prose.", "section": "typography" },
+      { "name": "The Paper-Flat Rule", "body": "Surfaces never lift. To separate content, use a hairline rule, whitespace, or the cobalt flow line — never a shadow or a card.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the notation margin + argument column, and let the cobalt flow line draw down each section (static under reduced motion).",
+      "Do make every margin mark mean something (∴ — → ✓); use ordered numbering only where order is real, like the Activities timeline.",
+      "Do run cobalt (#1e3ad6) generously as ink — lines, marks, years, links — and keep clash-red (#c8362a) rare.",
+      "Do build hierarchy from Schibsted Grotesk's weight range; confine Spline Sans Mono to notation, labels, years, nav, and links.",
+      "Do cap body measure ~65–75ch, use text-wrap balance on headings / pretty on prose, and honor prefers-reduced-motion.",
+      "Do keep reading copy ≥16px so Graphite on Sheet clears 4.5:1."
+    ],
+    "donts": [
+      "Don't reintroduce the editorial-typographic lane: no display serif (Fraunces / Newsreader / Playfair / Cormorant), no italic-serif headlines, no mono-label-over-monochrome restraint.",
+      "Don't ship generic AI slop: no dark-bg + neon accent, no glassmorphism, no gradient text, no decorative 01/02/03 numbering, no animated counters.",
+      "Don't drift into corporate SaaS: no hero metric, no feature-card grids, no filled CTA buttons.",
+      "Don't use cards, side-stripe borders, or any box-shadow — surfaces stay flat; separate with rules, whitespace, or the flow line.",
+      "Don't set running prose in the mono, or turn cobalt into a filled button/background.",
+      "Don't let clash-red spread into a general accent — it means 'clash / dropped,' nothing else."
+    ]
+  }
+}

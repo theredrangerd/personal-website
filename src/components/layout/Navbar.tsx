@@ -8,7 +8,7 @@ const navItems = [
   { id: "about", label: "About" },
   { id: "interests", label: "Interests" },
   { id: "activities", label: "Activities" },
-  { id: "achievements", label: "Achievements" },
+  { id: "achievements", label: "Distinctions" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -55,32 +55,33 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass py-3 shadow-lg shadow-black/20" : "bg-transparent py-5"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+        scrolled ? "border-rule bg-sheet/90 backdrop-blur-sm" : "border-transparent bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6">
+      <nav className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
         <button
           type="button"
           onClick={() => scrollTo("hero")}
-          className="font-display text-lg font-semibold tracking-tight text-white transition-colors hover:text-accent-glow"
+          className="font-display text-lg font-extrabold tracking-tight text-ink transition-colors hover:text-flow"
         >
           {siteContent.name.split(" ")[0]}
-          <span className="text-accent">.</span>
+          <span className="text-flow"> →</span>
         </button>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-7 md:flex">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
                 type="button"
                 onClick={() => scrollTo(item.id)}
-                className={`rounded-full px-4 py-2 text-sm transition-all duration-300 ${
+                className={`font-mono text-xs font-medium uppercase tracking-[0.14em] transition-colors ${
                   activeId === item.id
-                    ? "bg-accent/20 text-accent-glow"
-                    : "text-zinc-400 hover:text-white"
+                    ? "text-ink"
+                    : "text-graphite hover:text-ink"
                 }`}
               >
+                {activeId === item.id && <span className="text-flow">→ </span>}
                 {item.label}
               </button>
             </li>
@@ -89,22 +90,22 @@ export function Navbar() {
 
         <button
           type="button"
-          className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="relative z-50 flex h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           onClick={() => setMenuOpen((open) => !open)}
         >
           <span
-            className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${
+            className={`block h-px w-6 bg-ink transition-transform duration-300 ${
               menuOpen ? "translate-y-2 rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-white transition-opacity duration-300 ${
+            className={`block h-px w-6 bg-ink transition-opacity duration-300 ${
               menuOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${
+            className={`block h-px w-6 bg-ink transition-transform duration-300 ${
               menuOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           />
@@ -114,24 +115,23 @@ export function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -12 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.25 }}
-            className="glass absolute inset-x-4 top-full mt-2 rounded-2xl p-4 md:hidden"
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="border-t border-rule bg-sheet px-6 py-4 md:hidden"
           >
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col">
               {navItems.map((item) => (
-                <li key={item.id}>
+                <li key={item.id} className="rule-hair first:border-t-0">
                   <button
                     type="button"
                     onClick={() => scrollTo(item.id)}
-                    className={`w-full rounded-xl px-4 py-3 text-left text-sm transition-colors ${
-                      activeId === item.id
-                        ? "bg-accent/20 text-accent-glow"
-                        : "text-zinc-300 hover:bg-white/5"
+                    className={`flex w-full items-center gap-2 py-3 text-left font-mono text-sm font-medium uppercase tracking-[0.14em] transition-colors ${
+                      activeId === item.id ? "text-flow" : "text-graphite"
                     }`}
                   >
+                    {activeId === item.id && <span aria-hidden>→</span>}
                     {item.label}
                   </button>
                 </li>

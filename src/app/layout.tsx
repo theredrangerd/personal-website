@@ -1,19 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Schibsted_Grotesk, Spline_Sans_Mono } from "next/font/google";
 import { MotionProvider } from "@/components/providers/MotionProvider";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { siteContent } from "@/lib/content";
 import "./globals.css";
 
-const inter = Inter({
+const grotesk = Schibsted_Grotesk({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-grotesk",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const splineMono = Spline_Sans_Mono({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-spline-mono",
 });
 
 export const metadata: Metadata = {
@@ -27,12 +31,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
+    <html lang="en">
+      <body className={`${grotesk.variable} ${splineMono.variable} font-sans`}>
+        <a href="#about" className="skip-link">
+          Skip to the argument
+        </a>
         <MotionProvider>
           <SmoothScrollProvider>
             <Navbar />
-            <main className="relative z-10">{children}</main>
+            <main>{children}</main>
           </SmoothScrollProvider>
         </MotionProvider>
       </body>
